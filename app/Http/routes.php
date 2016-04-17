@@ -19,5 +19,6 @@ Route::get('/contact', 'PageController@contact');
 Route::get('/events', 'PageController@events');
 Route::get('/events/{event}', 'PageController@events_show');
 
+Route::post('/contact','EmailController@sendFromContact');
 //Route::resource('events','EventController');
 Route::resource('providers','ProviderController');
