@@ -15,9 +15,14 @@
         }
         $(document).pjax('.subnav .navbar-nav li a', '#main_content');
         $(document).pjax('.pjax', '#main_content');
-        $(document).pjax('.nav_login', '#login_content');
+        $(document).pjax('.nav_login', '#main_content');
         $(document).on('pjax:start', function() { NProgress.start(); });
         $(document).on('pjax:end',   function() { NProgress.done();  });
+
+        $(document.body).on('submit', '.pjax-form', function(event) {
+            event.preventDefault(); // stop default submit behavior when it bubbles to <body>
+            $.pjax.submit(event, '#main_content');
+        });
     });
     $('.slider').slider({
         full_width: true,

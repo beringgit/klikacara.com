@@ -8249,4 +8249,62 @@ footer {
     position: absolute;
     width: 32%; }
 
+.auth-container {
+  width: 450px;
+  margin: 2em auto; }
+  @media screen and (max-width: 320px) {
+    .auth-container {
+      width: 320px; } }
+
+.auth-form {
+  padding: 1.5em;
+  border-radius: 8px;
+  background-color: #EEEEEE; }
+  .auth-form form {
+    height: 100%;
+    display: block; }
+
+.fb-bg {
+  background-color: #3b5998; }
+  .fb-bg:hover {
+    color: white;
+    background-color: #2d4373; }
+
+.soc-media-login {
+  padding: 0.5em; }
+
+.soc-med-login {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  margin: 0.5em auto;
+  padding: 0.5em 1em; }
+
+.strike-line {
+  position: relative;
+  text-align: center;
+  padding: 0.5em 0;
+  width: 100%; }
+  .strike-line span {
+    position: relative;
+    padding: 0.5em;
+    background-color: #EEEEEE;
+    z-index: 2; }
+  .strike-line::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    background-color: #999988;
+    top: 50%;
+    height: 1px; }
+
+.twitter-bg {
+  background-color: #44ccf6; }
+  .twitter-bg:hover {
+    color: white;
+    background-color: #13bff4; }
+
 /*# sourceMappingURL=app.css.map */

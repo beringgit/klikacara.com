@@ -34,8 +34,8 @@
             </div>
             <div class="col-sm-12 col-lg-3 col-md-3">
                 <ul class="nav navbar-nav navbar-right hidden-md hidden-sm">
-                    <li><a class="nav_login" href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
+                    <li><a class="nav_login" href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}" class="nav_login">Register</a></li>
                     <li><a href="#">Bantuan</a></li>
                 </ul>
             </div>

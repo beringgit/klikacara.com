@@ -22,3 +22,8 @@ Route::get('/events/{event}', 'PageController@events_show');
 Route::post('/contact','EmailController@sendFromContact');
 //Route::resource('events','EventController');
 Route::resource('providers','ProviderController');
+
+Route::auth();
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

@@ -22,6 +22,6 @@ class EmailController extends Controller
         ];
         $this->emailer->sendFromContact($data);
         Session::flash('contact_success','Your message has been successfully sended');
-        return PageController::contact();
+        return 'Sukses';
     }
 }
