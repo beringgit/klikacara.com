@@ -12,14 +12,13 @@ class CreateTableProductProviders extends Migration
      */
     public function up()
     {
-        Schema::create('prdouct_providers', function (Blueprint $table) {
+        Schema::create('product_providers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->string('satuan',30);
             $table->decimal('price_per_item',8,2);
             $table->text('description');
             $table->integer('provider_id')->unsigned();
-
             $table->foreign('provider_id')
                 ->references('id')
                 ->on('providers')

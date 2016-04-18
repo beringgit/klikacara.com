@@ -17,7 +17,7 @@
         <span>ATAU</span>
     </div>
     <div class="">
-        {!! Form::open(['url' => '/register','method' => 'POST','class' => 'form pjax-form', 'id' => 'register_form']) !!}
+        {!! Form::open(['url' => '/register','method' => 'POST','class' => 'form', 'id' => 'register_form']) !!}
 
         <div class="form-group{{ $errors->has('f_name') ? ' has-error' : '' }}">
             <div class="row">
@@ -81,8 +81,13 @@
                 <div class="col-md-12 col-lg-12 col-sm-12">
                     {!! Form::label('sex','Sex') !!}
                     <div class="radio-group">
-                        {!! Form::radio('sex','Male',true) !!} Male &nbsp;
-                        {!! Form::radio('sex','Female') !!} Female
+                        {!! Form::radio('sex','P',true) !!} Male &nbsp;
+                        {!! Form::radio('sex','W') !!} Female
+                        @if ($errors->has('sex'))
+                            <span class="help-block text-center">
+                            <strong>{{ $errors->first('sex') }}</strong>
+                        </span>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -133,7 +138,7 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-lg-12">
-                    <button type="submit" class="btn btn-custom form-control pjax">
+                    <button type="submit" class="btn btn-custom form-control">
                         <i class="fa fa-btn fa-user-plus">&nbsp;</i>Daftar
                     </button>
                 </div>
