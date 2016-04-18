@@ -20,10 +20,37 @@ Route::get('/events', 'PageController@events');
 Route::get('/events/{event}', 'PageController@events_show');
 
 Route::post('/contact','EmailController@sendFromContact');
-//Route::resource('events','EventController');
 Route::resource('providers','ProviderController');
-
-Route::auth();
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
+Route::get('/admin/login','AdminAuthController@showLoginForm');
+Route::get('/admin/register','AdminAuthController@showRegisterForm');
+Route::get('/admin/password/reset','AdminAuthController@resetPassword');
+
+Route::get('/provider/login','ProviderAuthController@showLoginForm');
+Route::get('/provider/register','ProviderAuthController@showRegisterForm');
+Route::get('/provider/password/reset','ProviderPasswordController@resetPassword');
+
+
+Route::group(['middleware' => ['admin']], function(){
+    Route::get('/admin/logout','AdminAuthController@logout');
+
+    // Registration Routes...
+    Route::get('admin/register', 'AdminAuthController@showRegistrationForm');
+    Route::post('admin/register', 'AdminAuthController@register');
+
+    Route::get('/admin', 'AdminController@index');
+});
+
+
+Route::group(['middleware' => ['provider']], function(){
+    Route::get('/provider/logout','ProviderAuthController@logout');
+
+    // Registration Routes...
+    Route::get('provider/register', 'ProviderAuthController@showRegistrationForm');
+    Route::post('provider/register', 'ProviderAuthController@register');
+
+    Route::get('/provider', 'ProviderController@index');
+});
+

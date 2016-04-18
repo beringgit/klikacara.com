@@ -14,6 +14,7 @@ class CreateTableProductProviders extends Migration
     {
         Schema::create('prdouct_providers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('category_id')->unsigned();
             $table->string('satuan',30);
             $table->decimal('price_per_item',8,2);
             $table->text('description');

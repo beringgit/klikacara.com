@@ -21,7 +21,6 @@
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
-                    {{--<input type="email" class="form-control" name="email" value="{{ old('email') }}">--}}
                     {!! Form::email('email',old('email'),['class' => 'form-control text-center', 'placeholder'  => 'Your email']) !!}
                     @if ($errors->has('email'))
                         <span class="help-block text-center">

@@ -1,33 +1,40 @@
 {!! Form::open(['action' => 'EmailController@sendFromContact', 'method' => 'post']) !!}
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="form-group">
-                {{--<label for="name_contact">Nama</label>--}}
+            <div class="form-group {{ $errors->has('contact_name') ? 'has-error' : '' }}">
                 {!! Form::label('contact_name','Nama') !!}
-                {!! Form::text('contact_name',null,['class' => 'form-control']) !!}
-                {{--<input type="text" class="form-control" placeholder="Your Name">--}}
+                {!! Form::text('contact_name',null,['class' => 'form-control', 'placeholder' => 'Your Name']) !!}
+                @if ($errors->has('contact_name'))
+                    <span class="help-block text-center">
+                            <strong>{{ $errors->first('contact_name') }}</strong>
+                        </span>
+                @endif
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="form-group">
+            <div class="form-group {{ $errors->has('contact_email') ? 'has-error' : '' }}">
                 {!! Form::label('contact_email','Email') !!}
-                {!! Form::email('contact_email',null,['class' => 'form-control']) !!}
-                {{--<label for="name_contact">Email</label>--}}
-                {{--<input type="email" class="form-control" placeholder="Your email">--}}
+                {!! Form::email('contact_email',null,['class' => 'form-control','placeholder' => 'Your email']) !!}
+                @if ($errors->has('contact_email'))
+                    <span class="help-block text-center">
+                        <strong>{{ $errors->first('contact_email') }}</strong>
+                    </span>
+                @endif
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="form-group">
-                {!! Form::label('contact_mesage','Message') !!}
-                {!! Form::textarea('contact_message',null,['class'  => 'form-control']) !!}
-                {{--<label for="message">Message</label>--}}
-                    {{--<textarea class="form-control"--}}
-                              {{--placeholder="Your message" name="contact_message" id="message" cols="30" rows="10"></textarea>--}}
+            <div class="form-group {{ $errors->has('contact_message') ? 'has-error' : '' }}">
+                {!! Form::label('contact_message','Message') !!}
+                {!! Form::textarea('contact_message',null,['class'  => 'form-control', 'placeholder' => 'Your Messages']) !!}
+                @if ($errors->has('contact_message'))
+                    <span class="help-block text-center">
+                            <strong>{{ $errors->first('contact_message') }}</strong>
+                        </span>
+                @endif
             </div>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-4">
             <div class="form-group">
-                {{--<input type="submit" value="Kirim" class="btn form-control btn-custom">--}}
                 {!! Form::submit('Kirim',['class'   => 'btn form-control btn-custom']) !!}
             </div>
         </div>

@@ -8,6 +8,9 @@ use App\Http\Requests;
 
 class ProviderController extends Controller
 {
+    public function __construct(){
+        $this->middleware('provider');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +18,7 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        //
+        return "SASASSAS";
     }
 
     /**

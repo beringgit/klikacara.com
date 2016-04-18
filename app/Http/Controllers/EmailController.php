@@ -20,6 +20,7 @@ class EmailController extends Controller
             'email' => $request->contact_email,
             'message'   => $request->contact_message
         ];
+
         $this->emailer->sendFromContact($data);
         Session::flash('contact_success','Your message has been successfully sended');
         return 'Sukses';
