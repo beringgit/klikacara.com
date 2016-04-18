@@ -54,3 +54,9 @@ Route::group(['middleware' => ['provider']], function(){
     Route::get('/provider', 'ProviderController@index');
 });
 
+// Routes for Facebook login
+
+Route::get('/auth/facebook','Auth\AuthController@redirectToFacebookProvider');
+Route::get('/auth/facebook/callback','Auth\AuthController@handleFacebookProviderCallback');
+
+

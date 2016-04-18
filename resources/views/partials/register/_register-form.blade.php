@@ -7,7 +7,7 @@
     </p>
     <div class="row social-media-login">
         <div class="col-md-12 col-sm-12 col-lg-12 fb-login">
-            <a href="#" class="soc-med-login text-center white-text fb-bg"><i class="fa fa-facebook">&nbsp;</i>Daftar dengan Facebook</a>
+            <a href="{{ action('Auth\AuthController@redirectToFacebookProvider') }}" class="soc-med-login text-center white-text fb-bg"><i class="fa fa-facebook">&nbsp;</i>Daftar dengan Facebook</a>
         </div>
         <div class="col-md-12 col-sm-12 col-lg-12 twitter-login">
             <a href="#" class="soc-med-login text-center white-text twitter-bg"><i class="fa fa-twitter">&nbsp;</i>Daftar dengan Twitter</a>
@@ -17,31 +17,45 @@
         <span>ATAU</span>
     </div>
     <div class="">
-        {!! Form::open(['url' => '/register','method' => 'POST','class' => 'form', 'id' => 'register_form']) !!}
+        {!! Form::model($user = new App\User,['url' => '/register','method' => 'POST','class' => 'form', 'id' => 'register_form']) !!}
 
-        <div class="form-group{{ $errors->has('f_name') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('fname') ? ' has-error' : '' }}">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
 
-                    {!! Form::label('f_name','First Name') !!}
-                    {!! Form::text('f_name',old('f_name'),['class' => 'form-control text-center', 'placeholder'  => 'Your First Name']) !!}
-                    @if ($errors->has('f_name'))
+                    {!! Form::label('fname','First Name') !!}
+                    {!! Form::text('fname',old('f_name'),['class' => 'form-control text-center', 'placeholder'  => 'Your First Name']) !!}
+                    @if ($errors->has('fname'))
                         <span class="help-block text-center">
-                            <strong>{{ $errors->first('f_name') }}</strong>
+                            <strong>{{ $errors->first('fname') }}</strong>
                         </span>
                     @endif
                 </div>
             </div>
         </div>
 
-        <div class="form-group{{ $errors->has('l_name') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('lname') ? ' has-error' : '' }}">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
-                    {!! Form::label('l_name','Last Name') !!}
-                    {!! Form::text('l_name',old('l_name'),['class' => 'form-control text-center', 'placeholder'  => 'Your Last Name']) !!}
+                    {!! Form::label('lname','Last Name') !!}
+                    {!! Form::text('lname',old('l_name'),['class' => 'form-control text-center', 'placeholder'  => 'Your Last Name']) !!}
                     @if ($errors->has('l_name'))
                         <span class="help-block text-center">
-                            <strong>{{ $errors->first('l_name') }}</strong>
+                            <strong>{{ $errors->first('lname') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12">
+                    {!! Form::label('username','Username') !!}
+                    {!! Form::text('username',old('username'),['class' => 'form-control text-center', 'placeholder'  => 'Username']) !!}
+                    @if ($errors->has('username'))
+                        <span class="help-block text-center">
+                            <strong>{{ $errors->first('username') }}</strong>
                         </span>
                     @endif
                 </div>
@@ -76,14 +90,14 @@
             </div>
         </div>
 
-        <div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
+        <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12">
-                    {!! Form::label('sex','Sex') !!}
+                    {!! Form::label('gender','Sex') !!}
                     <div class="radio-group">
-                        {!! Form::radio('sex','P',true) !!} Male &nbsp;
-                        {!! Form::radio('sex','W') !!} Female
-                        @if ($errors->has('sex'))
+                        {!! Form::radio('gender','Male',true) !!} Male &nbsp;
+                        {!! Form::radio('gender','Female') !!} Female
+                        @if ($errors->has('gender'))
                             <span class="help-block text-center">
                             <strong>{{ $errors->first('sex') }}</strong>
                         </span>
