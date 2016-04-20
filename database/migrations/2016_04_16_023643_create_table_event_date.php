@@ -14,19 +14,14 @@ class CreateTableEventDate extends Migration
     {
         Schema::create('event_date', function (Blueprint $table) {
             $table->increments('id');
+
             $table->date('register_open')->nullable();
             $table->date('register_close')->nullable();
+
             $table->time('event_start');
             $table->time('event_close');
             $table->date('date');
             $table->integer('event_id')->unsigned();
-
-            $table->foreign('event_id')
-                ->references('id')
-                ->on('events')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
 
             $table->timestamps();
         });

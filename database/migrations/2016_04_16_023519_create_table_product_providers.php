@@ -18,6 +18,7 @@ class CreateTableProductProviders extends Migration
             $table->string('satuan',30);
             $table->decimal('price_per_item',8,2);
             $table->text('description');
+
             $table->integer('provider_id')->unsigned();
             $table->foreign('provider_id')
                 ->references('id')
@@ -36,6 +37,6 @@ class CreateTableProductProviders extends Migration
      */
     public function down()
     {
-        Schema::drop('prdouct_providers');
+        Schema::drop('product_providers');
     }
 }

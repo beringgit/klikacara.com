@@ -14,11 +14,10 @@ class CreateTableAdmin extends Migration
     {
         Schema::create('admins', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fname');
-            $table->string('lname')->nullable();
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('phone',12);
-            $table->char('sex',1);
+            $table->string('gender',6);
             $table->date('bdate');
             $table->string('password');
             $table->rememberToken();

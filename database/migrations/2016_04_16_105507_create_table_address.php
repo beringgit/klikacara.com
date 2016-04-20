@@ -19,8 +19,15 @@ class CreateTableAddress extends Migration
             $table->string('city',30);
             $table->string('province',50);
             $table->char('postal_code',5);
-            $table->integer('provider_id')->unsigned();
             $table->text('google_maps')->nullable();
+
+            $table->integer('provider_id')->unsigned();
+            $table->foreign('provider_id')
+                ->references('id')
+                ->on('providers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

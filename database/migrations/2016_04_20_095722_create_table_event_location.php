@@ -14,17 +14,7 @@ class CreateTableEventLocation extends Migration
     {
         Schema::create('event_location', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('date_id')->unsigned();
-            $table->string('location',200);
-            $table->integer('event_date_id')->unsigned();
-
-            $table->foreign('event_date_id')
-                ->references('id')
-                ->on('event_date')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-
+            $table->string('location');
             $table->timestamps();
         });
     }

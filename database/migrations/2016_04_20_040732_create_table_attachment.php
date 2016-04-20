@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableUserStorage extends Migration
+class CreateTableAttachment extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateTableUserStorage extends Migration
      */
     public function up()
     {
-        Schema::create('user_storage', function (Blueprint $table) {
+        Schema::create('attachments', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('attachment_id')->unisigned();
             $table->string('dir_hashes');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -27,6 +27,6 @@ class CreateTableUserStorage extends Migration
      */
     public function down()
     {
-        Schema::drop('user_storage');
+        Schema::drop('attachments');
     }
 }

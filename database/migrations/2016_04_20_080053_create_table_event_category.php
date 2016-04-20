@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableSpeakers extends Migration
+class CreateTableEventCategory extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,9 @@ class CreateTableSpeakers extends Migration
      */
     public function up()
     {
-        Schema::create('speakers', function (Blueprint $table) {
+        Schema::create('event_category', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',60);
-            $table->string('position',60);
-            $table->string('topic_title',60)->nullable();
-            $table->string('company',60);
-            $table->integer('event_id')->unsigned();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateTableSpeakers extends Migration
      */
     public function down()
     {
-        Schema::drop('speakers');
+        Schema::drop('event_category');
     }
 }

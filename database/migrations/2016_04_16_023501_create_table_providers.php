@@ -15,12 +15,19 @@ class CreateTableProviders extends Migration
         Schema::create('providers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('company_name',60);
-            $table->string('email')->unique();
-            $table->char('sex',1);
-            $table->date('bdate');
-            $table->string('phone',12);
-            $table->string('password');
+            $table->string('company_email')->unique();
+            $table->string('company_telephone',12);
             $table->text('description');
+            $table->integer('user_id')->unsigned();
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->boolean('confirmed_by_admin');
+            $table->softDeletes();
             $table->timestamps();
             $table->rememberToken();
         });
