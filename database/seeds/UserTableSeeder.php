@@ -13,34 +13,28 @@ class UserTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'fname'     => 'Rizqy',
-                'lname'     => 'Faishal',
-                'email'     => 'rizqyfaishal@hotmail.com',
-                'sex'       => 'P',
-                'bdate'     => Carbon\Carbon::now(),
-                'phone'     => '089672987967',
-                'password'  => bcrypt('password'),
-                'username'  => 'rizqyfaishal'
+                'name' => 'Alibaba',
+                'email' => 'ali@baba.com',
+                'gender'   => 'female',
+                'bdate' => \Carbon\Carbon::now(),
+                'phone' => '089672987967',
+                'password'  => bcrypt('password')
             ],
             [
-                'fname'     => 'Rohmat',
-                'lname'     => 'Taufik',
-                'email'     => 'rohmattaufik@hotmail.com',
-                'sex'       => 'P',
-                'bdate'     => Carbon\Carbon::now(),
-                'phone'     => '085647451424',
-                'password'  => bcrypt('password'),
-                'username'  => 'rohmattaufik'
+                'name' => 'Alibaba2',
+                'email' => 'ali@baba2.com',
+                'gender'   => 'female',
+                'bdate' => \Carbon\Carbon::now(),
+                'phone' => '089672987967',
+                'password'  => bcrypt('password')
             ],
             [
-                'fname'     => 'Wahyu',
-                'lname'     => 'Prihantoro',
-                'email'     => 'wahyuprihantoro@hotmail.com',
-                'sex'       => 'P',
-                'bdate'     => Carbon\Carbon::now(),
-                'phone'     => '085641910348',
-                'password'  => bcrypt('password'),
-                'username'  => 'wahyu_prihantoro'
+                'name' => 'Alibaba3',
+                'email' => 'ali@baba3.com',
+                'gender'   => 'male',
+                'bdate' => \Carbon\Carbon::now(),
+                'phone' => '089672987967',
+                'password'  => bcrypt('password')
             ]
         ]);
     }

@@ -1,4 +1,4 @@
-{!! Form::open(['action' => 'EmailController@sendFromContact', 'method' => 'post']) !!}
+{!! Form::open(['action' => 'EmailController@sendFromContact', 'method' => 'post','class' => 'pjax-form']) !!}
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="form-group {{ $errors->has('contact_name') ? 'has-error' : '' }}">

@@ -25,6 +25,7 @@ class Authenticate
             }
         }
 
+        Auth::user()->last_login = Carbon::now();
         return $next($request);
     }
 }

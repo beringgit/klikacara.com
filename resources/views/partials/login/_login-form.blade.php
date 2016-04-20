@@ -7,10 +7,10 @@
     </p>
     <div class="row social-media-login">
         <div class="col-md-12 col-sm-12 col-lg-12 fb-login">
-            <a href="#" class="soc-med-login text-center white-text fb-bg"><i class="fa fa-facebook">&nbsp;</i>Login dengan Facebook</a>
+            <a href="{{ action('Auth\AuthController@redirectToFacebookProvider') }}" class="pjax soc-med-login text-center white-text fb-bg"><i class="fa fa-facebook">&nbsp;</i>Login dengan Facebook</a>
         </div>
         <div class="col-md-12 col-sm-12 col-lg-12 twitter-login">
-            <a href="#" class="soc-med-login text-center white-text twitter-bg"><i class="fa fa-twitter">&nbsp;</i>Login dengan Twitter</a>
+            <a href="{{ action('Auth\AuthController@redirectToTwitterProvider') }}" class="pjax soc-med-login text-center white-text twitter-bg"><i class="fa fa-twitter">&nbsp;</i>Login dengan Twitter</a>
         </div>
     </div>
     <div class="strike-line">

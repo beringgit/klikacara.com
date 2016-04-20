@@ -36,7 +36,7 @@
                 <ul class="nav navbar-nav navbar-right hidden-md hidden-sm">
                     <li><a class="nav_login" href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}" class="nav_login">Register</a></li>
-                    <li><a href="#">Bantuan</a></li>
+                    <li><a href="{{ url('/logout') }}" class="nav_login">Logout</a></li>
                 </ul>
             </div>
         </div>

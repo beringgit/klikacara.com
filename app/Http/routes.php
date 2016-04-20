@@ -21,6 +21,8 @@ Route::get('/events/{event}', 'PageController@events_show');
 
 Route::post('/contact','EmailController@sendFromContact');
 Route::resource('providers','ProviderController');
+
+
 Route::auth();
 
 
@@ -58,5 +60,11 @@ Route::group(['middleware' => ['provider']], function(){
 
 Route::get('/auth/facebook','Auth\AuthController@redirectToFacebookProvider');
 Route::get('/auth/facebook/callback','Auth\AuthController@handleFacebookProviderCallback');
+
+
+// Routes for Twitter login
+
+Route::get('/auth/twitter','Auth\AuthController@redirectToTwitterProvider');
+Route::get('/auth/twitter/callback','Auth\AuthController@handleTwitterProviderCallback');
 
 
