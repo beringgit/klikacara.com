@@ -23,12 +23,8 @@ class CreateTableEvents extends Migration
             $table->integer('quota')->unsigned();
             $table->string('poster')->nullable();
 
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->integer('eventable_id')->unsigned();
+            $table->string('eventable_type');
 
             $table->integer('location_id')
                 ->references('id')

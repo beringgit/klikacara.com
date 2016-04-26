@@ -4,13 +4,6 @@
             <div class="col-lg-3 col-md-3 col-sm-12">
                 <div class="navbar-header">
                     @include('partials._nav-header')
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sub-nav"
-                            aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">

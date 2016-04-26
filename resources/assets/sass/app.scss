@@ -1,6 +1,7 @@
 //@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "bootstrap";
 @import "font-awesome/font-awesome";
+@import "jquery-select2/core";
 
 $slider-bg-color: grey !default;
 $slider-bg-color-light: grey !default;
@@ -9,6 +10,92 @@ $slider-indicator-color: $klikacara-red-bg !default;
 @import "parsials/carousel";
 @import "parsials/slider";
 
+.sidebar-container,
+.blog-content-container,
+.article-show-container{
+  margin-top: 2em;
+}
+
+.blog-image-header {
+  .blog-image-item {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+  }
+}
+
+.navbar-collapse ul.navbar-nav li {
+  padding: 0 1em;
+}
+
+.dashboard-nav, .navbar-default.sidebar {
+  box-shadow: none;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid;
+  border-color: #e7e7e7;
+}
+
+.navbar-default.sidebar {
+  @media screen and (min-width: 768px){
+    width: 270px;
+    position: fixed;
+    top: $navbar-height + 1px;
+    height: 100%;
+    left: 0;
+    border-right: 1px solid #e7e7e7;
+  }
+  li {
+    border-bottom: 1px solid;
+    border-color: #e7e7e7;
+  }
+  li.sidebar-search {
+    padding: 1em;
+  }
+}
+
+
+.breadcrumbs-content {
+  background-color: #EEEEEE;
+  .breadcrumb {
+    background: none;
+    margin-bottom: 0;
+    padding: 1em 0;
+  }
+}
+
+.article-category {
+  margin-top: 0.5em;
+}
+
+.pagination {
+  li.active {
+    background-color: $klikacara-red-bg;
+    color: $klikacara-white-tex;
+  }
+}
+.sidebar-content {
+  margin-bottom: 1em;
+  padding: 1em;
+  background-color: #EEEEEE;
+  border-radius: 7px;
+  hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-color: darken(#EEEEEE, 10%);
+  }
+}
+
+.blog-content-container {
+  .article-body {
+    margin-top: 2em;
+  }
+}
+
+.blog-header {
+  background-color: $klikacara-red-bg;
+  color: $klikacara-white-tex;
+  padding: 1em;
+}
 
 .hidden-md, .hidden-sm {
   @media screen and (max-width: $screen-sm){
@@ -239,6 +326,10 @@ footer {
       margin-bottom: 1em;
     }
   }
+}
+
+#main_content {
+  margin-top: $navbar-height;
 }
 
 footer {

@@ -16,6 +16,7 @@ class CreateTableShopCarts extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('product_id')->unsigned();
+            $table->boolean('confirmed_status');
             $table->timestamps();
         });
     }

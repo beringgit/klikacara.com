@@ -9,10 +9,9 @@
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "^5.2",
         "jacobbennett/pjax": "^1.0",
-        "intervention/image": "^2.3",
-        "viraj/hawkeye": "^1.0",
         "laravel/socialite": "^2.0",
-        "guzzlehttp/guzzle": "~4.0"
+        "creitive/laravel5-breadcrumbs": "^2.0",
+        "viraj/hawkeye": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -166,4 +166,34 @@ class AuthController extends Controller
 
     }
 
+
+    public function showLoginForm()
+    {
+        $view = property_exists($this, 'loginView')
+            ? $this->loginView : 'auth.authenticate';
+
+        if (view()->exists($view)) {
+            return view($view);
+        }
+
+        return view('auth.login')->with([
+            'page'  => $this->page->setPage('Login'),
+            'user' => new User(),
+            'socialite' => false
+        ]);
+    }
+
+    public function showRegistrationForm()
+    {
+        if (property_exists($this, 'registerView')) {
+            return view($this->registerView);
+        }
+
+        return view('auth.register')->with([
+            'page'  => $this->page->setPage('Register'),
+            'user' => new User(),
+            'socialite' => false
+         ]);
+    }
+
 }

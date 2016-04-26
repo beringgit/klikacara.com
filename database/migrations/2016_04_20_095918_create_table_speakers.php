@@ -48,7 +48,7 @@ class CreateTableSpeakers extends Migration
      */
     public function down()
     {
-        Schema::drop('speakers');
         Schema::drop('event_speaker');
+        Schema::drop('speakers');
     }
 }

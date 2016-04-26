@@ -21,12 +21,12 @@ class PageDescription
         'description'   => 'Klikacara.com merupakan sebuah website',
         'author'        => 'Fukicorp.id',
         'keyword'       => 'klikacara.com, event, mediapartners',
-        'status'        => null
+//        'status'        => null
     ];
 
-    public function setPage($title, $active_key){
+    public function setPage($title){
         $this->page['title']    = $title;
-        $this->page['status'] = $this->status->setStateActive($active_key);
+//        $this->page['status'] = $this->status->setStateActive($active_key);
         return $this->page;
     }
 

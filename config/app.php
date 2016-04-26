@@ -149,6 +149,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Creitive\Breadcrumbs\BreadcrumbsServiceProvider::class,
+        \Viraj\Hawkeye\HawkeyeServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -157,6 +159,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
 
 
@@ -208,8 +211,8 @@ return [
         'HTML'  => Collective\Html\HtmlFacade::class,
         'Form'  => Collective\Html\FormFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-
-
+        'Breadcrumbs'   => Creitive\Breadcrumbs\Facades\Breadcrumbs::class,
+        'HashDir'   => \Viraj\Hawkeye\HawkeyeFacade::class
     ],
 
 ];

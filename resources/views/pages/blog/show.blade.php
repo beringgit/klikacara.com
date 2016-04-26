@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Rizqy
- * Date: 4/20/2016
- * Time: 9:48 PM
- */
+@extends('partials._base')
+
+@section('content')
+    @include('partials.blog._blog-show-article')
+@endsection

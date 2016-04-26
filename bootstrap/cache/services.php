@@ -24,10 +24,12 @@
     20 => 'Illuminate\\View\\ViewServiceProvider',
     21 => 'Collective\\Html\\HtmlServiceProvider',
     22 => 'Laravel\\Socialite\\SocialiteServiceProvider',
-    23 => 'App\\Providers\\AppServiceProvider',
-    24 => 'App\\Providers\\AuthServiceProvider',
-    25 => 'App\\Providers\\EventServiceProvider',
-    26 => 'App\\Providers\\RouteServiceProvider',
+    23 => 'Creitive\\Breadcrumbs\\BreadcrumbsServiceProvider',
+    24 => 'Viraj\\Hawkeye\\HawkeyeServiceProvider',
+    25 => 'App\\Providers\\AppServiceProvider',
+    26 => 'App\\Providers\\AuthServiceProvider',
+    27 => 'App\\Providers\\EventServiceProvider',
+    28 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -40,10 +42,12 @@
     6 => 'Illuminate\\Pagination\\PaginationServiceProvider',
     7 => 'Illuminate\\Session\\SessionServiceProvider',
     8 => 'Illuminate\\View\\ViewServiceProvider',
-    9 => 'App\\Providers\\AppServiceProvider',
-    10 => 'App\\Providers\\AuthServiceProvider',
-    11 => 'App\\Providers\\EventServiceProvider',
-    12 => 'App\\Providers\\RouteServiceProvider',
+    9 => 'Creitive\\Breadcrumbs\\BreadcrumbsServiceProvider',
+    10 => 'Viraj\\Hawkeye\\HawkeyeServiceProvider',
+    11 => 'App\\Providers\\AppServiceProvider',
+    12 => 'App\\Providers\\AuthServiceProvider',
+    13 => 'App\\Providers\\EventServiceProvider',
+    14 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (

@@ -8,10 +8,14 @@
     @if(!$socialite)
         <div class="row social-media-login">
             <div class="col-md-12 col-sm-12 col-lg-12 fb-login">
-                <a href="{{ action('Auth\AuthController@redirectToFacebookProvider') }}" class="soc-med-login text-center white-text fb-bg"><i class="fa fa-facebook">&nbsp;</i>Daftar dengan Facebook</a>
+                <a href="{{ action('Auth\AuthController@redirectToFacebookProvider') }}"
+                   class="soc-med-login text-center white-text fb-bg">
+                    <i class="fa fa-facebook">&nbsp;</i>Daftar dengan Facebook</a>
             </div>
             <div class="col-md-12 col-sm-12 col-lg-12 twitter-login">
-                <a href="#" class="soc-med-login text-center white-text twitter-bg"><i class="fa fa-twitter">&nbsp;</i>Daftar dengan Twitter</a>
+                <a href="{{  action('Auth\AuthController@redirectToTwitterProvider') }}"
+                   class="soc-med-login text-center white-text twitter-bg">
+                    <i class="fa fa-twitter">&nbsp;</i>Daftar dengan Twitter</a>
             </div>
         </div>
         <div class="strike-line">
@@ -20,7 +24,6 @@
     @endif
     <div class="">
         {!! Form::model($user,['url' => '/register','method' => 'POST','class' => 'pjax-form', 'id' => 'register_form']) !!}
-
 
             {!! Form::hidden('facebook_id', session('facebook_id') == null ? null : session('facebook_id')) !!}
             {!! Form::hidden('twitter_id', session('twitter_id') == null ? null : session('twitter_id')) !!}

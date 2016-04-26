@@ -24,4 +24,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function events(){
+        return $this->morphMany('App\Event','eventable');
+    }
+
+    public function articles(){
+        return $this->hasMany('App\Article');
+    }
+
+    public function shop_carts(){
+        return $this->hasMany('App\ShopCart','user_id');
+    }
 }

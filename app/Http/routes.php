@@ -27,7 +27,9 @@ Route::auth();
 
 
 Route::get('/admin/login','AdminAuthController@showLoginForm');
-Route::get('/admin/register','AdminAuthController@showRegisterForm');
+Route::post('/admin/login','AdminAuthController@login');
+Route::get('admin/register', 'AdminAuthController@getRegister');
+Route::post('admin/register', 'AdminAuthController@register');
 Route::get('/admin/password/reset','AdminAuthController@resetPassword');
 
 Route::get('/provider/login','ProviderAuthController@showLoginForm');
@@ -37,11 +39,6 @@ Route::get('/provider/password/reset','ProviderPasswordController@resetPassword'
 
 Route::group(['middleware' => ['admin']], function(){
     Route::get('/admin/logout','AdminAuthController@logout');
-
-    // Registration Routes...
-    Route::get('admin/register', 'AdminAuthController@showRegistrationForm');
-    Route::post('admin/register', 'AdminAuthController@register');
-
     Route::get('/admin', 'AdminController@index');
 });
 
@@ -56,6 +53,9 @@ Route::group(['middleware' => ['provider']], function(){
     Route::get('/provider', 'ProviderController@index');
 });
 
+Route::resource('articles','ArticleController');
+Route::resource('article_category','ArticleCategoryController');
+
 // Routes for Facebook login
 
 Route::get('/auth/facebook','Auth\AuthController@redirectToFacebookProvider');
@@ -67,4 +67,16 @@ Route::get('/auth/facebook/callback','Auth\AuthController@handleFacebookProvider
 Route::get('/auth/twitter','Auth\AuthController@redirectToTwitterProvider');
 Route::get('/auth/twitter/callback','Auth\AuthController@handleTwitterProviderCallback');
 
+Route::get('/blog/page/{multiplier}','ArticleController@showList');
+Route::get('/blog','ArticleController@index');
+Route::get('/blog/posts/{article}','ArticleController@show');
+Route::get('/blog/posts/category/{articleCategory}','ArticleCategoryController@showArticles');
+Route::get('/blog/posts/author/{author}','ArticleController@showArticlesByAuthor');
+Route::get('/blog/posts/date/{date}','ArticleController@showArticlesByDate');
+Route::get('/uploads','AttachmentController@get');
+Route::get('/attachments','AttachmentController@showAllAttachments');
 
+//Dashboard
+
+Route::get('/dashboard','DashboardController@home');
+Route::get('/get/events','EventController@home');

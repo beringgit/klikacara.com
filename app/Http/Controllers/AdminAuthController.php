@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Admin;
 use App\Helper\PageDescription;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -57,7 +58,7 @@ class AdminAuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:admins',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -69,8 +70,16 @@ class AdminAuthController extends Controller
         return view('pages.admin.auth.login')->with('page',$this->page->setPage('Login',''));
     }
 
-    public function showRegisterForm(){
-        return view('pages.admin.auth.register')->with('page',$this->page->setPage('Register',''));
+
+    public function getRegister(){
+        return $this->showRegistrationForm();
+    }
+    public function showRegistrationForm(){
+        return view('pages.admin.auth.register')->with([
+            'page' => $this->page->setPage('Register'),
+            'user' => new Admin(),
+            'socialite' => false
+        ]);
     }
 
     public function resetPassword(){
@@ -90,7 +99,8 @@ class AdminAuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),

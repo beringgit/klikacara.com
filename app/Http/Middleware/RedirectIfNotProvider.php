@@ -13,7 +13,7 @@ class RedirectIfNotProvider
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = 'admin')
+    public function handle($request, Closure $next, $guard = 'provider')
     {
         if(!Auth::guard($guard)->check()){
             return redirect('/provider/login');

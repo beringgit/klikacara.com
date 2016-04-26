@@ -5,7 +5,7 @@
                 <h4>Tentang Kami</h4>
                 <ul class="footer-nav">
                     <li><a class="pjax" href="{{ action('PageController@about') }}">Apa itu klikacara?</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a class="pjax" href="{{ action('ArticleController@index') }}">Blog</a></li>
                     <li><a class="pjax" href="{{ action('PageController@about') }}">Our team</a></li>
                     <li><a class="pjax" href="{{ action('PageController@contact') }}">Contact</a></li>
                 </ul>

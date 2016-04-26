@@ -17,17 +17,8 @@ class CreateTableProviders extends Migration
             $table->string('company_name',60);
             $table->string('company_email')->unique();
             $table->string('company_telephone',12);
+            $table->string('company_logo');
             $table->text('description');
-            $table->integer('user_id')->unsigned();
-
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-            $table->boolean('confirmed_by_admin');
-            $table->softDeletes();
             $table->timestamps();
             $table->rememberToken();
         });

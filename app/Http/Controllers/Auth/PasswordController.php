@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helper\PageDescription;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
 {
+
+    public function __construct(PageDescription $page){
+        $this->page = $page;
+        $this->middleware('guest');
+
+    }
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -25,8 +32,21 @@ class PasswordController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+    public function showLinkRequestForm()
     {
-        $this->middleware('guest');
+        if (property_exists($this, 'linkRequestView')) {
+            return view($this->linkRequestView);
+        }
+
+        if (view()->exists('auth.passwords.email')) {
+            return view('auth.passwords.email')->with([
+                'page'  => $this->page->setPage('Reset password'),
+            ]);
+        }
+
+        return view('auth.password')->with([
+            'page'  => $this->page->setPage('Reset password'),
+        ]);
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Admin;
+use App\Article;
+use App\ArticleCategory;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -27,6 +30,18 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot($router);
+
+        $router->bind('article',function($article){
+            return Article::findOrFail($article);
+        });
+
+        $router->bind('articleCategory',function($articleCategory){
+            return ArticleCategory::where('name','=',$articleCategory)->first();
+        });
+
+        $router->bind('author', function($author){
+            return Admin::where('name','=',$author)->first();
+        });
     }
 
     /**
